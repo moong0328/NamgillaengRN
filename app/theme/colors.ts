@@ -15,7 +15,7 @@ const palette = {
   primary200: "#E8C1B4",
   primary300: "#DDA28E",
   primary400: "#D28468",
-  primary500: "#C76542",
+  primary500: "#00B2FF",
   primary600: "#A54F31",
 
   secondary100: "#DCDDE9",
@@ -59,7 +59,7 @@ export const colors = {
   /**
    * The default color of the screen background.
    */
-  background: palette.neutral200,
+  background: palette.neutral100,
   /**
    * The default border color.
    */
@@ -71,7 +71,7 @@ export const colors = {
   /**
    * A subtle color used for lines.
    */
-  separator: palette.neutral300,
+  separator: palette.neutral600,
   /**
    * Error messages.
    */
