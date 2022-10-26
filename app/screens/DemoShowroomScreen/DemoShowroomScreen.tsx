@@ -120,7 +120,11 @@ export const DemoShowroomScreen: FC<DemoTabScreenProps<"DemoShowroom">> =
           </SafeAreaView>
         )}
       >
-        <Screen preset="fixed" safeAreaEdges={["top", "bottom"]}>
+        <Screen
+          preset="fixed"
+          safeAreaEdges={["top", "bottom"]}
+          contentContainerStyle={$screenContainer}
+        >
           <DrawerIconButton onPress={toggleDrawer} {...{ open, progress }} />
 
           <SectionList
@@ -151,6 +155,10 @@ export const DemoShowroomScreen: FC<DemoTabScreenProps<"DemoShowroom">> =
       </DrawerLayout>
     )
   }
+
+const $screenContainer: ViewStyle = {
+  flex: 1,
+}
 
 const $drawer: ViewStyle = {
   flex: 1,
