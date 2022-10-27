@@ -124,6 +124,12 @@ const en = {
     },
   },
   // @demo remove-block-end
+  homeListScreen: {
+    title: "남길랭?",
+    subTitle: "오늘은 어디를",
+    addList: "리스트를 추가해주세요.",
+    subAddList: "우측 상단 리스트등록 아이콘을 클릭",
+  },
 }
 
 export default en

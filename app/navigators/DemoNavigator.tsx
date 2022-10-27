@@ -5,7 +5,7 @@ import { TextStyle, ViewStyle } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Icon, Text } from "../components"
 import { translate } from "../i18n"
-import { DemoCommunityScreen, DemoShowroomScreen, DemoDebugScreen } from "../screens"
+import { DemoCommunityScreen, HomeListScreen, DemoShowroomScreen } from "../screens"
 import { DemoPodcastListScreen } from "../screens/DemoPodcastListScreen"
 import { colors, spacing, typography } from "../theme"
 import { AppStackParamList, AppStackScreenProps } from "./AppNavigator"
@@ -15,6 +15,7 @@ export type DemoTabParamList = {
   DemoShowroom: undefined
   DemoDebug: undefined
   DemoPodcastList: undefined
+  HomeList: undefined
 }
 
 /**
@@ -45,8 +46,8 @@ export function DemoNavigator() {
       }}
     >
       <Tab.Screen
-        name="DemoShowroom"
-        component={DemoShowroomScreen}
+        name="HomeList"
+        component={HomeListScreen}
         options={{
           tabBarLabel: ({ focused }) => <Text style={[{color: (focused && colors.tint) || 'black'}, $tabBarLabel]}>{translate("demoNavigator.homeTab")}</Text>,
           tabBarIcon: ({ focused }) => <Icon icon="home" color={focused && colors.tint} />,
@@ -72,10 +73,10 @@ export function DemoNavigator() {
       />
 
       <Tab.Screen
-        name="DemoDebug"
-        component={DemoDebugScreen}
+        name="DemoShowroom"
+        component={DemoShowroomScreen}
         options={{
-          tabBarLabel: ({ focused }) => <Text style={[{color: (focused && colors.tint) || 'black'}, $tabBarLabel]}>{translate("demoNavigator.moreTab")}</Text>,
+          tabBarLabel: ({ focused }) => <Text style={[{color: (focused && colors.tint) || 'black'}, $tabBarLabel]}>{translate("demoNavigator.componentsTab")}</Text>,
           tabBarIcon: ({ focused }) => <Icon icon="more" color={focused && colors.tint} />,
         }}
       />

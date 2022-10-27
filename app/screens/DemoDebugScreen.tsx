@@ -1,15 +1,20 @@
 import React, { FC } from "react"
 import * as Application from "expo-application"
-import { Linking, Platform, TextStyle, View, ViewStyle } from "react-native"
+import { 
+  // Linking, 
+  Platform, 
+  TextStyle, 
+  View, 
+  ViewStyle } from "react-native"
 import { Button, ListItem, Screen, Text } from "../components"
 import { DemoTabScreenProps } from "../navigators/DemoNavigator"
 import { colors, spacing } from "../theme"
-import { isRTL } from "../i18n"
+// import { isRTL } from "../i18n"
 import { useStores } from "../models"
 
-function openLinkInBrowser(url: string) {
-  Linking.canOpenURL(url).then((canOpen) => canOpen && Linking.openURL(url))
-}
+// function openLinkInBrowser(url: string) {
+//   Linking.canOpenURL(url).then((canOpen) => canOpen && Linking.openURL(url))
+// }
 
 export const DemoDebugScreen: FC<DemoTabScreenProps<"DemoDebug">> = function DemoDebugScreen(
   _props,
@@ -39,11 +44,11 @@ export const DemoDebugScreen: FC<DemoTabScreenProps<"DemoDebug">> = function Dem
 
   return (
     <Screen preset="scroll" safeAreaEdges={["top"]} contentContainerStyle={$container}>
-      <Text
+      {/* <Text
         style={$reportBugsLink}
         tx="demoDebugScreen.reportBugs"
         onPress={() => openLinkInBrowser("https://github.com/infinitered/ignite/issues")}
-      />
+      /> */}
       <Text style={$title} preset="heading" tx="demoDebugScreen.title" />
       <View style={$itemsContainer}>
         <ListItem
@@ -99,7 +104,7 @@ export const DemoDebugScreen: FC<DemoTabScreenProps<"DemoDebug">> = function Dem
 }
 
 const $container: ViewStyle = {
-  paddingTop: spacing.large + spacing.extraLarge,
+  paddingTop: spacing.large,
   paddingBottom: spacing.huge,
   paddingHorizontal: spacing.large,
 }
@@ -108,11 +113,11 @@ const $title: TextStyle = {
   marginBottom: spacing.huge,
 }
 
-const $reportBugsLink: TextStyle = {
-  color: colors.tint,
-  marginBottom: spacing.large,
-  alignSelf: isRTL ? "flex-start" : "flex-end",
-}
+// const $reportBugsLink: TextStyle = {
+//   color: colors.tint,
+//   marginBottom: spacing.large,
+//   alignSelf: isRTL ? "flex-start" : "flex-end",
+// }
 
 const $item: ViewStyle = {
   marginBottom: spacing.medium,
